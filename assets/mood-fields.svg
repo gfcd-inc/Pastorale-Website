@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1066" viewBox="0 0 1600 1066" role="img" aria-label="田園のイメージ">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8f6f1"/>
+      <stop offset="0.55" stop-color="#efe7dc"/>
+      <stop offset="1" stop-color="#f2eee5"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#304c3c" stop-opacity="0.92"/>
+      <stop offset="1" stop-color="#c26c3b" stop-opacity="0.55"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1066" fill="url(#sky)"/>
+
+  <path d="M0 590 C 320 540, 520 520, 800 540 C 1120 565, 1300 545, 1600 500 L1600 1066 L0 1066 Z" fill="#304c3c" opacity="0.18"/>
+  <path d="M0 630 C 360 585, 560 575, 820 600 C 1120 630, 1320 620, 1600 565 L1600 1066 L0 1066 Z" fill="#304c3c" opacity="0.22"/>
+
+  <path d="M0 700 C 380 660, 620 665, 880 700 C 1140 735, 1340 735, 1600 700 L1600 1066 L0 1066 Z" fill="url(#field)" opacity="0.42"/>
+
+  <g opacity="0.35">
+    <path d="M60 1066 C 420 910, 680 820, 980 740" stroke="#ffffff" stroke-width="10" stroke-linecap="round"/>
+    <path d="M240 1066 C 520 900, 760 820, 1120 720" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+    <path d="M420 1066 C 700 910, 980 820, 1320 740" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <circle cx="1240" cy="230" r="140" fill="#c26c3b" opacity="0.12" filter="url(#soft)"/>
+  <circle cx="260" cy="260" r="160" fill="#304c3c" opacity="0.10" filter="url(#soft)"/>
+
+  <g fill="#1c1c1a" opacity="0.12">
+    <path d="M910 420 q40 -30 80 0 q-40 30 -80 0z"/>
+    <path d="M980 395 q28 -20 56 0 q-28 20 -56 0z"/>
+    <path d="M1035 420 q22 -16 44 0 q-22 16 -44 0z"/>
+  </g>
+</svg>
