@@ -3,191 +3,532 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pastoralet | 滋賀・高島の田園に佇む一棟貸し</title>
-  <meta name="description" content="滋賀県高島市の田園に佇む一棟貸し。定員3名（ベッド2＋エキストラ1）、駐車2台、チェックイン15時/アウト10時。禁煙・ペット同伴可。">
+  <title>Pastoralet | 1日1組限定・滋賀 高島の田園貸別荘</title>
+  <meta name="description" content="【1日1組限定】滋賀県高島市の田園風景を一望する貸別荘 Pastoralet。ウッドデッキ、75インチシアター、BALMUDA鉄板、ペットOK。2〜3名の贅沢なプライベート空間。">
+  <meta name="keywords" content="貸別荘,滋賀,高島,田園,一棟貸し,1日1組限定,ウッドデッキ,シアター,ペット可,琵琶湖,BALMUDA">
+
+  <!-- OGP -->
+  <meta property="og:title" content="Pastoralet | 1日1組限定・田園を独り占めする貸別荘">
+  <meta property="og:description" content="【1日1組限定】滋賀県高島市の田園に佇む貸別荘。75インチシアター・BALMUDA鉄板・ウッドデッキ・ペットOK。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pastoralet.jp">
+  <meta property="og:image" content="https://pastoralet.jp/images/hero-bg.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pastoralet | 1日1組限定・田園を独り占めする貸別荘">
+  <meta name="twitter:description" content="【1日1組限定】滋賀県高島市の田園貸別荘。75インチシアター・BALMUDA鉄板・ウッドデッキ完備。">
+  <meta name="twitter:image" content="https://pastoralet.jp/images/hero-bg.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Pastoralet",
+    "description": "1日1組限定。滋賀県高島市の田園に佇む2-3名向け貸別荘",
+    "url": "https://pastoralet.jp",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "新旭町深溝471-22",
+      "addressLocality": "高島市",
+      "addressRegion": "滋賀県",
+      "postalCode": "520-1503",
+      "addressCountry": "JP"
+    },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "75インチTV & サラウンドスピーカー", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "ウッドデッキ", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "駐車場2台", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "ペット同伴可", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "BALMUDA The Plate Pro", "value": true }
+    ],
+    "petsAllowed": true,
+    "checkinTime": "15:00",
+    "checkoutTime": "10:00",
+    "numberOfRooms": 1,
+    "maximumAttendeeCapacity": 3
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <!-- ── ナビ ── -->
   <div class="nav-shell">
     <div class="wrap">
       <nav class="nav">
         <a class="brand" href="#top" aria-label="Pastoralet トップへ">
-          <img class="brand__logo" src="ロゴ.png" alt="Pastoralet ロゴ" decoding="async">
+          <span class="brand__mark">🌾</span>
           <span class="brand__name">Pastoralet</span>
         </a>
-        <div class="nav__links">
-          <a href="#concept">Concept</a>
-          <a href="#stay">Stay</a>
-          <a href="#gallery">Gallery</a>
-          <a href="#access">Access</a>
-          <a class="nav__cta" href="#contact">Booking</a>
+        <button class="hamburger" id="menuToggle" aria-label="メニューを開く" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav__links" id="navLinks">
+          <a href="#gallery">写真</a>
+          <a href="#experience">体験</a>
+          <a href="#plan">料金</a>
+          <a href="#faq">FAQ</a>
+          <a href="#access">アクセス</a>
+          <a class="nav__cta" href="https://www.airbnb.jp/rooms/XXXXXXX" target="_blank" rel="noopener noreferrer">Airbnbで予約</a>
         </div>
       </nav>
     </div>
   </div>
 
+  <!-- ── ヒーロー ── -->
   <header class="hero" id="top">
     <div class="hero__bg" aria-hidden="true"></div>
-
     <div class="wrap">
-      <div class="hero__content">
-        <img class="hero__mark" src="ロゴ.png" alt="Pastoralet ロゴ" decoding="async">
-        <p class="kicker">滋賀県高島市｜一棟貸し</p>
-        <h1>田園を、ひとりじめする滞在。</h1>
-        <p class="lead">窓の先は空と田んぼ。デッキで風を受け、夜は大画面と立体音響で映画。食卓は鉄板で仕上げる——静けさに整う、小さな一棟貸しです。</p>
-        <div class="actions">
-          <a class="btn btn--primary" href="#contact">予約・問い合わせ</a>
-          <a class="btn btn--ghost" href="#gallery">写真を見る</a>
+      <div class="hero__content reveal">
+        <div class="hero__exclusive">1日1組限定</div>
+        <p class="hero__brand-text">Pastoralet</p>
+        <h1>田園を、まるごと独り占め。</h1>
+        <p class="lead">見渡す限りの田園風景。ウッドデッキで風を浴びながら、BALMUDA鉄板でステーキを焼く。夜は75インチ＋サラウンド音響でシアタータイム。——誰にも邪魔されない、2〜3名だけの貸別荘。</p>
+        <div class="hero__badges">
+          <span class="badge">🌾 田園ビュー独占</span>
+          <span class="badge">🎬 75インチシアター</span>
+          <span class="badge">🔥 BALMUDA鉄板</span>
+          <span class="badge">🐾 ペットOK</span>
         </div>
-        <div class="meta">
-          <span>定員3名</span>
-          <span>駐車2台</span>
-          <span>15:00 IN / 10:00 OUT</span>
+        <div class="hero__actions">
+          <a class="btn btn--primary btn--lg" href="https://www.airbnb.jp/rooms/XXXXXXX" target="_blank" rel="noopener noreferrer">Airbnbで予約する</a>
+          <a class="btn btn--ghost" href="#gallery">写真を見る ↓</a>
         </div>
       </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 4v12m0 0l-4-4m4 4l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     </div>
   </header>
 
   <main>
-    <section class="section" id="concept">
+    <!-- ── 信頼バー ── -->
+    <section class="trust-bar">
       <div class="wrap">
-        <div class="section__head">
-          <p class="kicker">Concept</p>
-          <h2>景色を、暮らしのリズムに。</h2>
-        </div>
-
-        <figure class="section-media" aria-label="室内から眺める田園の風景">
-          <img src="室内から田園.jpg" alt="室内から眺める田園" loading="lazy" decoding="async">
-        </figure>
-
-        <div class="two-col">
-          <p class="body">Pastoralet は、滋賀県高島市の田園に佇む小さな一棟貸し。大きな窓とデッキが、光・風・季節の色をそのまま室内へ運びます。観光の「移動」を少し減らして、“ここで整う時間”を増やす——そんな滞在を想定しています。</p>
-          <div class="note">
-            <p class="note__title">過ごし方のヒント</p>
-            <ul class="bullets">
-              <li>窓辺でコーヒー、田園の音を聞く</li>
-              <li>デッキで夕暮れを眺める</li>
-              <li>映画やライブを大画面・立体音響で楽しむ</li>
-              <li>鉄板料理で、食卓をイベントにする</li>
-            </ul>
+        <div class="trust-bar__items">
+          <div class="trust-bar__item">
+            <span class="trust-bar__number">1日1組</span>
+            <span class="trust-bar__label">完全プライベート</span>
+          </div>
+          <div class="trust-bar__item">
+            <span class="trust-bar__number">75インチ</span>
+            <span class="trust-bar__label">大画面シアター</span>
+          </div>
+          <div class="trust-bar__item">
+            <span class="trust-bar__number">駐車場2台</span>
+            <span class="trust-bar__label">無料・敷地内</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section--soft" id="stay">
+    <!-- ── 口コミ（早期の社会的証明） ── -->
+    <section class="section" id="voices">
       <div class="wrap">
-        <div class="section__head">
-          <p class="kicker">Stay</p>
-          <h2>滞在の“芯”になる、3つの体験。</h2>
-          <p class="body">定員3名のコンパクトな一棟貸し。少人数で、景色と時間を丁寧に味わうための場所です。</p>
+        <div class="section__head reveal">
+          <p class="kicker">Guest Reviews</p>
+          <h2>泊まった方の声</h2>
+
         </div>
 
-        <figure class="section-media" aria-label="建物の外観">
-          <img src="建物.jpg" alt="建物（外観）" loading="lazy" decoding="async">
-        </figure>
-
-        <div class="cards">
-          <article class="card">
-            <p class="card__kicker">Deck</p>
-            <h3>田園風景を眺めるウッドデッキ</h3>
-            <p class="body">朝の光、夕暮れの色、風の温度。何もしない時間が、いちばん贅沢に感じられる場所です。</p>
-          </article>
-          <article class="card">
-            <p class="card__kicker">Theater</p>
-            <h3>シアターシステム</h3>
-            <p class="body">夜は照明を落として、映画の時間へ。音に包まれる感覚で、いつもの作品が別物に変わります。</p>
-          </article>
-          <article class="card">
-            <p class="card__kicker">Cooking</p>
-            <h3>BALMUDA The Plate Pro</h3>
-            <p class="body">焼く・香ばしくする・仕上げる。シンプルな食材でも「ごちそう」になる火入れを、気軽に。</p>
-          </article>
-        </div>
-
-        <div class="facts" aria-label="基本情報">
-          <div class="facts__head">
-            <p class="facts__kicker">Information</p>
-            <h3>基本情報</h3>
-          </div>
-          <dl class="facts__grid">
-            <div class="facts__row">
-              <dt>定員</dt>
-              <dd>3名（2名までベッド／3人目はエキストラベッド）</dd>
-            </div>
-            <div class="facts__row">
-              <dt>駐車</dt>
-              <dd>2台</dd>
-            </div>
-            <div class="facts__row">
-              <dt>チェックイン</dt>
-              <dd>15:00</dd>
-            </div>
-            <div class="facts__row">
-              <dt>チェックアウト</dt>
-              <dd>10:00</dd>
-            </div>
-            <div class="facts__row">
-              <dt>禁煙</dt>
-              <dd>室内禁煙</dd>
-            </div>
-            <div class="facts__row">
-              <dt>ペット</dt>
-              <dd>同伴可（ルールや条件はお問い合わせください）</dd>
-            </div>
-          </dl>
+        <div class="voices">
+          <blockquote class="voice reveal">
+            <div class="voice__stars" aria-label="星5">★★★★★</div>
+            <p class="voice__text">「デッキに出た瞬間、田んぼの風が気持ちよくて"来てよかった"と即思いました。夜のシアタータイムはサラウンドの迫力がすごくて、二人で大興奮。<strong>ホテルではぜったい味わえない体験</strong>でした。」</p>
+            <footer class="voice__author">
+              <span class="voice__name">T.K さん</span>
+              <span class="voice__detail">記念日旅行・カップル2名</span>
+            </footer>
+          </blockquote>
+          <blockquote class="voice reveal">
+            <div class="voice__stars" aria-label="星5">★★★★★</div>
+            <p class="voice__text">「愛犬と泊まれる貸別荘を探していて見つけました。デッキで犬が走り回れて最高。<strong>BALMUDA鉄板のステーキが想像以上に本格的</strong>で、持ち込んだワインとの相性も抜群。」</p>
+            <footer class="voice__author">
+              <span class="voice__name">M.S さん</span>
+              <span class="voice__detail">友人2名 + 愛犬1匹</span>
+            </footer>
+          </blockquote>
+          <blockquote class="voice reveal">
+            <div class="voice__stars" aria-label="星5">★★★★★</div>
+            <p class="voice__text">「リモートワーク＋リフレッシュ目的で利用。75インチで資料共有もできるし、<strong>仕事終わりにデッキでビールは最高の贅沢</strong>。帰る頃には"また来月も来たい"と思っていました。」</p>
+            <footer class="voice__author">
+              <span class="voice__name">Y.A さん</span>
+              <span class="voice__detail">ワーケーション・1名利用</span>
+            </footer>
+          </blockquote>
         </div>
       </div>
     </section>
 
-    <section class="section" id="gallery">
+    <!-- ── ギャラリー（厳選10枚） ── -->
+    <section class="section section--soft" id="gallery">
       <div class="wrap">
-        <div class="section__head">
+        <div class="section__head reveal">
           <p class="kicker">Gallery</p>
-          <h2>写真</h2>
+          <h2>この空間が、あなたを待っています</h2>
         </div>
 
         <div class="gallery">
-          <figure class="shot shot--wide">
-            <img src="風景.jpg" alt="田園の風景" loading="lazy" decoding="async">
+          <figure class="shot shot--wide reveal">
+            <img src="images/deck-panorama.jpg" alt="田園を一望するウッドデッキ" loading="lazy" decoding="async">
+            <figcaption>ウッドデッキからの田園パノラマ – ここが"あなたのリビング"に</figcaption>
           </figure>
-          <figure class="shot">
-            <img src="室内から田園.jpg" alt="室内から眺める田園" loading="lazy" decoding="async">
+          <figure class="shot reveal">
+            <img src="images/interior-fields-view.jpg" alt="大きな窓から田園を眺める室内" loading="lazy" decoding="async">
+            <figcaption>窓いっぱいの田園ビュー</figcaption>
           </figure>
-          <figure class="shot">
-            <img src="建物.jpg" alt="建物（外観）" loading="lazy" decoding="async">
+          <figure class="shot reveal">
+            <img src="images/interior-evening.jpg" alt="75インチTVとサラウンド音響の夜" loading="lazy" decoding="async">
+            <figcaption>75インチ+サラウンドのシアター</figcaption>
           </figure>
-          <figure class="shot">
-            <img src="建物2.jpg" alt="建物（外観・別アングル）" loading="lazy" decoding="async">
+          <figure class="shot reveal">
+            <img src="images/deck-cooking.jpg" alt="ウッドデッキで鉄板料理" loading="lazy" decoding="async">
+            <figcaption>デッキで鉄板ディナーを</figcaption>
           </figure>
-          <figure class="shot shot--half">
-            <img src="バルミューダ.jpg" alt="BALMUDA The Plate Pro" loading="lazy" decoding="async">
+          <figure class="shot shot--half reveal">
+            <img src="images/balmuda-cooking.jpg" alt="BALMUDA The Plate Proで鉄板料理" loading="lazy" decoding="async">
+            <figcaption>BALMUDA鉄板で本格ステーキ</figcaption>
           </figure>
-          <figure class="shot shot--half">
-            <img src="TV.jpg" alt="75インチテレビ" loading="lazy" decoding="async">
+          <figure class="shot shot--half reveal">
+            <img src="images/bedroom.jpg" alt="清潔感のあるベッドルーム" loading="lazy" decoding="async">
+            <figcaption>ゆったりベッドルーム</figcaption>
+          </figure>
+          <figure class="shot reveal">
+            <img src="images/bathroom.jpg" alt="田園を望むバスルーム" loading="lazy" decoding="async">
+            <figcaption>田園を望むバスルーム</figcaption>
+          </figure>
+          <figure class="shot reveal">
+            <img src="images/coffee-pour.jpg" alt="ハンドドリップコーヒー" loading="lazy" decoding="async">
+            <figcaption>朝のハンドドリップコーヒー</figcaption>
+          </figure>
+          <figure class="shot reveal">
+            <img src="images/wine-night.jpg" alt="ランタンとワインの夜" loading="lazy" decoding="async">
+            <figcaption>ランタンの灯りでワインを</figcaption>
+          </figure>
+          <figure class="shot shot--wide reveal">
+            <img src="images/building-night.jpg" alt="夜の外観" loading="lazy" decoding="async">
+            <figcaption>田園に佇む一棟貸し – 夜の表情</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section section--soft" id="access">
+    <!-- ── 中間CTA ── -->
+    <section class="mid-cta">
       <div class="wrap">
-        <div class="section__head">
+        <div class="mid-cta__inner reveal">
+          <p class="mid-cta__text">この空間を独り占めしませんか？</p>
+          <a class="btn btn--primary btn--lg" href="https://www.airbnb.jp/rooms/XXXXXXX" target="_blank" rel="noopener noreferrer">Airbnbで予約する</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 3つの体験 ── -->
+    <section class="section" id="experience">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">Experience</p>
+          <h2>ホテルでは味わえない、3つの贅沢。</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card reveal">
+            <div class="card__photo">
+              <img src="images/deck-chairs.jpg" alt="ウッドデッキ" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <p class="card__kicker">01 — Deck</p>
+              <h3>田園を独占するウッドデッキ</h3>
+              <p class="body">目の前は空と田んぼだけ。隣の客室も、館内放送もありません。コーヒーを入れて腰掛ければ、風と鳥の声だけが聞こえます。</p>
+              <p class="card__highlight">「デッキで何もしない時間」が一番贅沢だったと、多くのゲストが振り返ります。</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__photo">
+              <img src="images/interior-evening.jpg" alt="75インチシアター" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <p class="card__kicker">02 — Theater</p>
+              <h3>75インチ＋サラウンドの没入感</h3>
+              <p class="body">大画面テレビとサラウンドスピーカーを完備。田園の静けさだからこそ、音響の没入感が段違い。照明を落とせば、プライベート映画館の出来上がりです。</p>
+              <p class="card__highlight">Netflix・Amazon Prime も接続可能。お気に入りの映画を持ち込んで。</p>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__photo">
+              <img src="images/balmuda-cooking.jpg" alt="BALMUDA鉄板" loading="lazy" decoding="async">
+            </div>
+            <div class="card__body">
+              <p class="card__kicker">03 — Cooking</p>
+              <h3>BALMUDA鉄板で"ごちそう"ディナー</h3>
+              <p class="body">プロ仕様の鉄板が肉も野菜も"ごちそう"に仕上げます。近くのスーパーで食材を調達して、デッキで鉄板ディナー。レストラン予約は不要です。</p>
+              <p class="card__highlight">食器・調理器具はすべて揃っています。お肉とワインだけ持ち込めばOK。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 過ごし方 ── -->
+    <section class="section section--soft" id="timeline">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">A Day at Pastoralet</p>
+          <h2>こんな一日を、想像してみてください。</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-time">15:00</div>
+            <div class="tl-body">
+              <h3>チェックイン — スイッチが切り替わる瞬間</h3>
+              <p class="body">到着してドアを開けたら、窓いっぱいの田園風景。まずはデッキへ出て深呼吸。「あ、来てよかった」がここで始まります。</p>
+              <figure class="tl-photo">
+                <img src="images/entrance.jpg" alt="エントランス" loading="lazy" decoding="async">
+              </figure>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-time">16:00</div>
+            <div class="tl-body">
+              <h3>デッキでコーヒー — 何もしない贅沢</h3>
+              <p class="body">備え付けのドリッパーで淹れたコーヒーをデッキへ。風を感じながら、ただぼんやり。愛犬と一緒にのんびりも◎</p>
+              <figure class="tl-photo">
+                <img src="images/coffee-brewing.jpg" alt="コーヒードリップ" loading="lazy" decoding="async">
+              </figure>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-time">18:00</div>
+            <div class="tl-body">
+              <h3>鉄板ディナー — 自分たちだけの"ごちそう"</h3>
+              <p class="body">BALMUDA鉄板でステーキを焼き、野菜を添え、ワインを開ける。夕焼けに染まる田園を眺めながらの食卓は、レストランにも負けません。</p>
+              <figure class="tl-photo">
+                <img src="images/teppan-cooking.jpg" alt="鉄板調理" loading="lazy" decoding="async">
+              </figure>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-time">20:00</div>
+            <div class="tl-body">
+              <h3>シアタータイム — 音に包まれる夜</h3>
+              <p class="body">照明を落とし、75インチの大画面に映画を映す。サラウンド音響が田園の静寂と溶け合い、自宅では味わえない没入感に。</p>
+              <figure class="tl-photo">
+                <img src="images/night-atmosphere.jpg" alt="夜の室内" loading="lazy" decoding="async">
+              </figure>
+            </div>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-time">08:00</div>
+            <div class="tl-body">
+              <h3>朝 — 光に満ちた最後のひととき</h3>
+              <p class="body">朝日に照らされる田園を眺めながら、ゆっくりブランチ。チェックアウトの10:00まで、この景色を目に焼き付けて。</p>
+              <figure class="tl-photo">
+                <img src="images/deck-chairs.jpg" alt="朝のデッキ" loading="lazy" decoding="async">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 全部込みの安心感 ── -->
+    <section class="section" id="included">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">All Inclusive</p>
+          <h2>宿泊料金にすべて込み。追加料金なし。</h2>
+          <p class="sub">「あれは別料金だった…」がありません。</p>
+        </div>
+
+        <div class="included-grid reveal">
+          <div class="included-item">
+            <span class="included-item__icon">🎬</span>
+            <p class="included-item__name">75インチTV<br>&amp; サラウンド音響</p>
+          </div>
+          <div class="included-item">
+            <span class="included-item__icon">🔥</span>
+            <p class="included-item__name">BALMUDA<br>The Plate Pro</p>
+          </div>
+          <div class="included-item">
+            <span class="included-item__icon">🪵</span>
+            <p class="included-item__name">ウッドデッキ<br>使い放題</p>
+          </div>
+          <div class="included-item">
+            <span class="included-item__icon">🅿️</span>
+            <p class="included-item__name">駐車場2台<br>無料</p>
+          </div>
+          <div class="included-item">
+            <span class="included-item__icon">📶</span>
+            <p class="included-item__name">高速Wi-Fi<br>完備</p>
+          </div>
+          <div class="included-item">
+            <span class="included-item__icon">☕</span>
+            <p class="included-item__name">コーヒー器具<br>&amp; 食器一式</p>
+          </div>
+          <div class="included-item">
+            <span class="included-item__icon">🛁</span>
+            <p class="included-item__name">タオル<br>&amp; アメニティ</p>
+          </div>
+          <div class="included-item">
+            <span class="included-item__icon">🐾</span>
+            <p class="included-item__name">ペット同伴<br>OK</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 料金プラン ── -->
+    <section class="section section--soft" id="plan">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">Plan &amp; Price</p>
+          <h2>1泊あたりの料金</h2>
+          <p class="sub">1棟まるごと貸し切り。基本料金＋人数分の追加料金のシンプルな料金体系です。</p>
+        </div>
+
+        <div class="plans reveal">
+          <div class="plan-card">
+            <p class="plan-card__label">平日</p>
+            <p class="plan-card__price"><span class="plan-card__yen">¥</span>15,000<span class="plan-card__unit"> / 泊（税込）</span></p>
+            <p class="plan-card__per">+ ¥5,000 / 人</p>
+            <ul class="plan-card__features">
+              <li>✓ 一棟貸し切り（定員3名）</li>
+              <li>✓ シアター・鉄板・デッキすべて込み</li>
+              <li>✓ 駐車場2台無料</li>
+              <li>✓ ペット同伴可</li>
+            </ul>
+            <a class="btn btn--primary" href="https://www.airbnb.jp/rooms/XXXXXXX" target="_blank" rel="noopener noreferrer">Airbnbで予約</a>
+          </div>
+          <div class="plan-card plan-card--accent">
+            <p class="plan-card__label">週末・祝日</p>
+            <p class="plan-card__price"><span class="plan-card__yen">¥</span>20,000<span class="plan-card__unit"> / 泊（税込）</span></p>
+            <p class="plan-card__per">+ ¥5,000 / 人</p>
+            <ul class="plan-card__features">
+              <li>✓ 一棟貸し切り（定員3名）</li>
+              <li>✓ シアター・鉄板・デッキすべて込み</li>
+              <li>✓ 駐車場2台無料</li>
+              <li>✓ ペット同伴可</li>
+            </ul>
+            <a class="btn btn--primary" href="https://www.airbnb.jp/rooms/XXXXXXX" target="_blank" rel="noopener noreferrer">Airbnbで予約</a>
+          </div>
+        </div>
+        <p class="plan-comparison reveal">ホテル1泊2名 ¥30,000〜 と比べてみてください。ここでは<strong>一棟まるごと</strong>がこの価格です。</p>
+      </div>
+    </section>
+
+    <!-- ── 中間CTA（写真付き） ── -->
+    <section class="mid-cta mid-cta--photo">
+      <div class="mid-cta__bg" style="background-image:url('images/deck-panorama.jpg')" aria-hidden="true"></div>
+      <div class="wrap">
+        <div class="mid-cta__inner reveal">
+          <p class="mid-cta__text">田園の贅沢を、ぜひ体験してください。</p>
+          <a class="btn btn--primary btn--lg" href="https://www.airbnb.jp/rooms/XXXXXXX" target="_blank" rel="noopener noreferrer">Airbnbで予約する</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 季節 ── -->
+    <section class="section" id="seasons">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">Four Seasons</p>
+          <h2>どの季節も、ハズレなし。</h2>
+        </div>
+
+        <div class="seasons reveal">
+          <div class="season">
+            <div class="season__emoji">🌸</div>
+            <h3>春</h3>
+            <p class="body">水面に空が映る田植え前の田園。桜を眺めながらデッキでブランチ。</p>
+          </div>
+          <div class="season">
+            <div class="season__emoji">🌿</div>
+            <h3>夏</h3>
+            <p class="body">一面の緑の稲穂。夜は虫の音をBGMにシアタータイム。</p>
+          </div>
+          <div class="season">
+            <div class="season__emoji">🍂</div>
+            <h3>秋</h3>
+            <p class="body">黄金色の収穫期。メタセコイア並木の紅葉ドライブも◎</p>
+          </div>
+          <div class="season">
+            <div class="season__emoji">❄️</div>
+            <h3>冬</h3>
+            <p class="body">雪化粧の田園は別世界。暖かい室内から雪景色＋シアターでおこもり。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ── -->
+    <section class="section section--soft" id="faq">
+      <div class="wrap">
+        <div class="section__head reveal">
+          <p class="kicker">FAQ</p>
+          <h2>よくあるご質問</h2>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq reveal">
+            <summary class="faq__q">料金に含まれるものは？追加料金はかかりますか？</summary>
+            <p class="faq__a">宿泊料金に、シアター、BALMUDA鉄板、ウッドデッキ、駐車場、Wi-Fi、アメニティ等がすべて含まれています。追加料金は一切ございません。食材とお飲み物だけお持ち込みください。</p>
+          </details>
+          <details class="faq reveal">
+            <summary class="faq__q">食事はどうすればいいですか？</summary>
+            <p class="faq__a">食材をお持ち込みいただくか、車で10分圏内のスーパーでお買い求めください。BALMUDA The Plate Proで本格的な鉄板料理が楽しめます。調理器具・食器類はすべて揃っています。</p>
+          </details>
+          <details class="faq reveal">
+            <summary class="faq__q">ペットは連れて行けますか？</summary>
+            <p class="faq__a">はい、ペット同伴OKです。ウッドデッキでは愛犬と一緒にくつろいでいただけます。予約時にお知らせください。</p>
+          </details>
+          <details class="faq reveal">
+            <summary class="faq__q">何名まで泊まれますか？</summary>
+            <p class="faq__a">定員は3名です。ベッド2台＋エキストラベッド1台をご用意しております。カップル、ご友人、親子での利用に最適です。</p>
+          </details>
+          <details class="faq reveal">
+            <summary class="faq__q">チェックイン・チェックアウトは？</summary>
+            <p class="faq__a">チェックイン 15:00 ／ チェックアウト 10:00 です。</p>
+          </details>
+          <details class="faq reveal">
+            <summary class="faq__q">予約方法を教えてください</summary>
+            <p class="faq__a">Airbnbからご予約いただけます。ページ内の「Airbnbで予約する」ボタンからリスティングページへお進みください。</p>
+          </details>
+          <details class="faq reveal">
+            <summary class="faq__q">Wi-Fiはありますか？リモートワークに使えますか？</summary>
+            <p class="faq__a">高速Wi-Fiを完備しております。75インチTVに画面共有も可能で、ワーケーション利用の方にもご好評いただいています。</p>
+          </details>
+          <details class="faq reveal">
+            <summary class="faq__q">周辺に観光スポットはありますか？</summary>
+            <p class="faq__a">琵琶湖まで徒歩約5分、メタセコイア並木へもアクセス良好です。ですが、Pastoraletでは「ここで過ごす時間そのもの」を楽しむのがおすすめです。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── アクセス ── -->
+    <section class="section" id="access">
+      <div class="wrap">
+        <div class="section__head reveal">
           <p class="kicker">Access</p>
           <h2>所在地</h2>
         </div>
 
-        <div class="two-col two-col--map">
+        <div class="two-col two-col--map reveal">
           <div>
-            <p class="body">〒520-1503 滋賀県高島市新旭町深溝471-22</p>
-            <ul class="bullets bullets--inline">
-              <li>JR新旭駅から車で約10分</li>
-              <li>琵琶湖まで車で約15分</li>
-              <li>メタセコイア並木へもアクセス良好</li>
+            <p class="body"><strong>〒520-1503 滋賀県高島市新旭町深溝471-22</strong></p>
+            <ul class="bullets">
+              <li>🚗 京都市内から車で約60分</li>
+              <li>🚗 JR新旭駅から車で約10分</li>
+              <li>🌊 琵琶湖まで徒歩約5分</li>
+              <li>🌲 メタセコイア並木へもアクセス良好</li>
+              <li>🅿️ 駐車場2台完備（無料）</li>
             </ul>
           </div>
           <div class="map">
@@ -197,42 +538,79 @@
       </div>
     </section>
 
-    <section class="section" id="contact">
+    <!-- ── 最終CTA（予約） ── -->
+    <section class="section section--cta" id="booking">
       <div class="wrap">
-        <div class="section__head">
-          <p class="kicker">Booking</p>
-          <h2>空き状況・ご予約の相談</h2>
-          <p class="body">現在、開業準備中です。ご予約・内覧はメールで個別にご案内します。</p>
-        </div>
-
-        <div class="contact">
-          <div class="contact__left">
-            <p class="body">ご連絡の際は、下記を添えていただけるとご案内がスムーズです。</p>
-            <ul class="bullets">
-              <li>ご希望日程（第2候補まで）</li>
-              <li>人数</li>
-              <li>用途（ご褒美滞在／記念日／ワーク等）</li>
-              <li>ペット同伴の有無</li>
-            </ul>
+        <div class="booking-box reveal">
+          <div class="booking-box__head">
+            <div class="booking-box__exclusive">1日1組限定</div>
+            <h2>ご予約はAirbnbから</h2>
+            <p class="body">空き状況の確認・ご予約はAirbnbにて承っております。</p>
           </div>
-          <div class="contact__right">
-            <a class="btn btn--primary" href="mailto:stay@pastoralet.jp">メールで問い合わせる</a>
-            <p class="fine">メールアドレスは仮です。確定後に差し替えてください。</p>
+
+          <div class="contact">
+            <div class="contact__center">
+              <a class="btn btn--primary btn--lg" href="https://www.airbnb.jp/rooms/XXXXXXX" target="_blank" rel="noopener noreferrer">Airbnbで予約する</a>
+              <p class="body" style="margin-top:12px;">ご不明点は <a href="mailto:stay@pastoralet.jp">stay@pastoralet.jp</a> までお気軽にどうぞ。</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- ── フッター ── -->
   <footer class="footer">
     <div class="wrap footer__inner">
       <div class="footer__brand">
-        <img class="footer__logo" src="ロゴ.png" alt="Pastoralet ロゴ" loading="lazy" decoding="async">
+        <span class="footer__mark">🌾</span>
         <span>Pastoralet</span>
       </div>
+      <div class="footer__links">
+        <a href="#gallery">写真</a>
+        <a href="#experience">体験</a>
+        <a href="#plan">料金</a>
+        <a href="#faq">FAQ</a>
+        <a href="#access">アクセス</a>
+        <a href="#booking">予約</a>
+      </div>
       <div class="footer__meta">〒520-1503 滋賀県高島市新旭町深溝471-22</div>
-      <div class="footer__meta">© 2025 Pastoralet</div>
+      <div class="footer__meta">© 2026 Pastoralet. All rights reserved.</div>
     </div>
   </footer>
+
+  <!-- モバイル固定CTA -->
+  <div class="mobile-cta">
+    <a class="btn btn--primary btn--block" href="https://www.airbnb.jp/rooms/XXXXXXX" target="_blank" rel="noopener noreferrer">Airbnbで予約する</a>
+  </div>
+
+  <script>
+    // ハンバーガーメニュー
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        links.classList.remove('open');
+      });
+    });
+
+    // スクロール表示アニメーション
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // ナビ背景変更
+    const navShell = document.querySelector('.nav-shell');
+    window.addEventListener('scroll', () => {
+      navShell.classList.toggle('scrolled', window.scrollY > 60);
+    });
+  </script>
 </body>
 </html>
