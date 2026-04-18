@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Pastorale Guest Guide</title>
+  <meta name="description" content="Pastorale 貸別荘ゲストガイド — WiFi、設備案内、近隣情報">
+  <!-- Android Chrome PWA -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- iOS fallback -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pastorale Guide">
+  <meta name="theme-color" content="#24311c">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="../images/%E3%83%AD%E3%82%B4%20(1).png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- ── タブナビゲーション ── -->
+  <nav class="tab-nav" id="tabNav">
+    <button class="tab-nav__btn active" data-section="home" aria-label="ホーム">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span data-i18n="nav.home">ホーム</span>
+    </button>
+    <button class="tab-nav__btn" data-section="wifi" aria-label="WiFi">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+      <span data-i18n="nav.wifi">WiFi</span>
+    </button>
+    <button class="tab-nav__btn" data-section="equipment" aria-label="設備ガイド">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+      <span data-i18n="nav.equipment">設備</span>
+    </button>
+    <button class="tab-nav__btn" data-section="rules" aria-label="ハウスルール">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <span data-i18n="nav.rules">ルール</span>
+    </button>
+    <button class="tab-nav__btn" data-section="nearby" aria-label="近隣ガイド">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span data-i18n="nav.nearby">周辺</span>
+    </button>
+    <button class="tab-nav__btn" data-section="access" aria-label="交通アクセス">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      <span data-i18n="nav.access">アクセス</span>
+    </button>
+  </nav>
+
+  <!-- ── メインコンテンツ ── -->
+  <main class="main">
+
+    <!-- ====== ホーム ====== -->
+    <section class="section active" id="home">
+      <div class="home-hero" style="background-image: url('../images/interior-evening.jpg')">
+        <div class="home-hero__overlay">
+          <img class="home-hero__logo" src="../images/%E3%83%AD%E3%82%B4%20(1).png" alt="Pastorale" width="80" height="80">
+          <h1 class="home-hero__title">Pastorale</h1>
+          <p class="home-hero__subtitle" data-i18n="home.welcome">ようこそ Pastorale へ</p>
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="ja">🇯🇵 日本語</button>
+            <button class="lang-btn" data-lang="en">🇬🇧 English</button>
+            <button class="lang-btn" data-lang="zh">🇨🇳 中文</button>
+          </div>
+        </div>
+      </div>
+      <div class="home-grid">
+        <button class="home-card" data-goto="wifi">
+          <div class="home-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+          </div>
+          <span class="home-card__label" data-i18n="home.card.wifi">WiFi・接続情報</span>
+        </button>
+        <button class="home-card" data-goto="equipment">
+          <div class="home-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></svg>
+          </div>
+          <span class="home-card__label" data-i18n="home.card.equipment">設備の使い方</span>
+        </button>
+        <button class="home-card" data-goto="rules">
+          <div class="home-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <span class="home-card__label" data-i18n="home.card.rules">ハウスルール</span>
+        </button>
+        <button class="home-card" data-goto="nearby">
+          <div class="home-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span class="home-card__label" data-i18n="home.card.nearby">近隣ガイド</span>
+        </button>
+        <button class="home-card" data-goto="access">
+          <div class="home-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          </div>
+          <span class="home-card__label" data-i18n="home.card.access">交通アクセス</span>
+        </button>
+        <a class="home-card home-card--emergency" href="tel:119">
+          <div class="home-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span class="home-card__label" data-i18n="home.card.emergency">緊急連絡 119</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ====== WiFi・接続情報 ====== -->
+    <section class="section" id="wifi">
+      <div class="section__header">
+        <h2 data-i18n="wifi.title">WiFi・接続情報</h2>
+      </div>
+      <div class="content-wrap">
+        <p class="wifi-scan-hint" data-i18n="wifi.qr.hint">カメラでQRコードを読み取ると自動接続できます</p>
+
+        <div class="wifi-bands">
+          <!-- 5GHz (recommended) -->
+          <div class="info-card info-card--accent wifi-band-card">
+            <div class="wifi-band-card__badge wifi-band-card__badge--recommended" data-i18n="wifi.5ghz.badge">おすすめ</div>
+            <h3>5GHz</h3>
+            <p class="wifi-band-card__desc" data-i18n="wifi.5ghz.desc">高速・動画視聴に最適</p>
+            <div class="wifi-detail">
+              <div class="wifi-detail__row">
+                <span class="wifi-detail__label">SSID</span>
+                <div class="wifi-detail__value-wrap">
+                  <span class="wifi-detail__value" id="wifi5gSSID">Pastorale_5GHz</span>
+                  <button class="copy-btn" data-copy="wifi5gSSID" aria-label="5GHz SSIDをコピー">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="wifi-detail__row">
+                <span class="wifi-detail__label" data-i18n="wifi.password">パスワード</span>
+                <div class="wifi-detail__value-wrap">
+                  <span class="wifi-detail__value" id="wifi5gPassword">pastorale54208</span>
+                  <button class="copy-btn" data-copy="wifi5gPassword" aria-label="5GHz パスワードをコピー">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="wifi-qr">
+              <img src="../images/Pastorale_5GHz.png" alt="5GHz WiFi QRコード" width="150" height="150">
+            </div>
+          </div>
+
+          <!-- 2.4GHz -->
+          <div class="info-card wifi-band-card">
+            <h3>2.4GHz</h3>
+            <p class="wifi-band-card__desc" data-i18n="wifi.24ghz.desc">安定接続・広範囲</p>
+            <div class="wifi-detail">
+              <div class="wifi-detail__row">
+                <span class="wifi-detail__label">SSID</span>
+                <div class="wifi-detail__value-wrap">
+                  <span class="wifi-detail__value" id="wifi24gSSID">Pastorale_2.4GHz</span>
+                  <button class="copy-btn" data-copy="wifi24gSSID" aria-label="2.4GHz SSIDをコピー">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="wifi-detail__row">
+                <span class="wifi-detail__label" data-i18n="wifi.password">パスワード</span>
+                <div class="wifi-detail__value-wrap">
+                  <span class="wifi-detail__value" id="wifi24gPassword">pastorale54208</span>
+                  <button class="copy-btn" data-copy="wifi24gPassword" aria-label="2.4GHz パスワードをコピー">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="wifi-qr">
+              <img src="../images/Pastorale_2.4GHz.png" alt="2.4GHz WiFi QRコード" width="150" height="150">
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h3 data-i18n="wifi.streaming.title">ストリーミングサービス</h3>
+          <p class="info-card__body" data-i18n="wifi.streaming.body">テレビにはNetflix、Amazon Prime Videoがインストールされています。ご自身のアカウントでログインしてお楽しみください。ご利用後はログアウトをお願いいたします。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 設備ガイド ====== -->
+    <section class="section" id="equipment">
+      <div class="section__header">
+        <h2 data-i18n="equipment.title">設備の使い方</h2>
+      </div>
+      <div class="content-wrap">
+        <div class="accordion-list">
+
+          <details class="accordion" open>
+            <summary class="accordion__header">
+              <img class="accordion__thumb" src="../images/interior-evening.jpg" alt="シアター" loading="lazy" decoding="async">
+              <div>
+                <h3 data-i18n="equipment.theater.title">75インチシアター & 5.1chサラウンド</h3>
+                <p class="accordion__sub" data-i18n="equipment.theater.sub">SONY BRAVIA + サラウンドスピーカー</p>
+              </div>
+            </summary>
+            <div class="accordion__body">
+              <ol data-i18n="equipment.theater.steps">
+                <li>テレビのリモコンで電源をONにします</li>
+                <li>サウンドバーは自動で連動します</li>
+                <li>Netflixボタンまたはホーム画面からアプリを選択してください</li>
+                <li>音量はリモコンの音量ボタンで調整できます</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary class="accordion__header">
+              <img class="accordion__thumb" src="../images/balmuda-cooking.jpg" alt="BALMUDA鉄板" loading="lazy" decoding="async">
+              <div>
+                <h3 data-i18n="equipment.teppan.title">BALMUDA The Plate Pro</h3>
+                <p class="accordion__sub" data-i18n="equipment.teppan.sub">プロ仕様の鉄板プレート</p>
+              </div>
+            </summary>
+            <div class="accordion__body">
+              <ol data-i18n="equipment.teppan.steps">
+                <li>プレートを本体にセットします</li>
+                <li>電源プラグをコンセントに差し込みます</li>
+                <li>ダイヤルで温度を調節して予熱します（約3分）</li>
+                <li>お好みの食材を焼いてお楽しみください</li>
+                <li>使用後はプレートが冷めてから濡れた布で拭いてください</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary class="accordion__header">
+              <img class="accordion__thumb" src="../images/coffee-brewing.jpg" alt="コーヒー" loading="lazy" decoding="async">
+              <div>
+                <h3 data-i18n="equipment.coffee.title">コーヒーグラインダー & ドリップ</h3>
+                <p class="accordion__sub" data-i18n="equipment.coffee.sub">挽きたてコーヒーをお楽しみください</p>
+              </div>
+            </summary>
+            <div class="accordion__body">
+              <ol data-i18n="equipment.coffee.steps">
+                <li>豆をグラインダーに入れ、お好みの粗さに挽きます</li>
+                <li>フィルターをドリッパーにセットし、挽いた豆を入れます</li>
+                <li>90℃前後のお湯を少量注ぎ、30秒蒸らします</li>
+                <li>「の」の字を描くようにゆっくり注いでください</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary class="accordion__header">
+              <img class="accordion__thumb" src="../images/kitchen.jpg" alt="キッチン" loading="lazy" decoding="async">
+              <div>
+                <h3 data-i18n="equipment.kitchen.title">キッチン設備</h3>
+                <p class="accordion__sub" data-i18n="equipment.kitchen.sub">IHコンロ、冷蔵庫、調理器具完備</p>
+              </div>
+            </summary>
+            <div class="accordion__body">
+              <p data-i18n="equipment.kitchen.body">キッチンにはIHコンロ、電子レンジ、冷蔵庫、トースター、基本的な調理器具・食器類が揃っています。調味料（塩・胡椒・油）もご用意しています。</p>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary class="accordion__header">
+              <img class="accordion__thumb" src="../images/deck-chairs.jpg" alt="ウッドデッキ" loading="lazy" decoding="async">
+              <div>
+                <h3 data-i18n="equipment.deck.title">ウッドデッキ</h3>
+                <p class="accordion__sub" data-i18n="equipment.deck.sub">田園を一望するプライベートデッキ</p>
+              </div>
+            </summary>
+            <div class="accordion__body">
+              <p data-i18n="equipment.deck.body">デッキチェアとテーブルをご自由にお使いください。夜間は虫が入りやすいため、室内の照明を暗めにし、デッキのライトをご利用ください。</p>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary class="accordion__header">
+              <img class="accordion__thumb" src="../images/bathroom.jpg" alt="バスルーム" loading="lazy" decoding="async">
+              <div>
+                <h3 data-i18n="equipment.bath.title">バスルーム & アメニティ</h3>
+                <p class="accordion__sub" data-i18n="equipment.bath.sub">タオル・シャンプー等完備</p>
+              </div>
+            </summary>
+            <div class="accordion__body">
+              <p data-i18n="equipment.bath.body">バスタオル、フェイスタオル、シャンプー、コンディショナー、ボディソープ、ドライヤーをご用意しています。追加のタオルは洗面台下の棚にございます。</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== ハウスルール ====== -->
+    <section class="section" id="rules">
+      <div class="section__header">
+        <h2 data-i18n="rules.title">ハウスルール</h2>
+      </div>
+      <div class="content-wrap">
+        <div class="info-card info-card--checkin">
+          <div class="checkin-times">
+            <div class="checkin-times__item">
+              <span class="checkin-times__label" data-i18n="rules.checkin">チェックイン</span>
+              <span class="checkin-times__time">15:00</span>
+            </div>
+            <div class="checkin-times__divider"></div>
+            <div class="checkin-times__item">
+              <span class="checkin-times__label" data-i18n="rules.checkout">チェックアウト</span>
+              <span class="checkin-times__time">10:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rules-list">
+          <div class="rule-item">
+            <span class="rule-item__icon">🚭</span>
+            <div>
+              <h3 data-i18n="rules.nosmoking.title">禁煙</h3>
+              <p data-i18n="rules.nosmoking.body">建物内・デッキを含む敷地内全面禁煙です</p>
+            </div>
+          </div>
+          <div class="rule-item">
+            <span class="rule-item__icon">🌙</span>
+            <div>
+              <h3 data-i18n="rules.quiet.title">夜間の静粛</h3>
+              <p data-i18n="rules.quiet.body">22時以降はデッキでの会話・音量にご配慮ください</p>
+            </div>
+          </div>
+          <div class="rule-item">
+            <span class="rule-item__icon">🗑️</span>
+            <div>
+              <h3 data-i18n="rules.trash.title">ゴミの分別</h3>
+              <p data-i18n="rules.trash.body">キッチンのゴミ箱に分別表示があります。燃えるゴミ・ビン・カン・ペットボトルに分けてください</p>
+            </div>
+          </div>
+          <div class="rule-item">
+            <span class="rule-item__icon">🔑</span>
+            <div>
+              <h3 data-i18n="rules.checkoutinfo.title">チェックアウト時のお願い</h3>
+              <p data-i18n="rules.checkoutinfo.body">使用した食器は軽くすすいでシンクに置いてください。エアコン・照明のOFF、窓の施錠をお願いいたします</p>
+            </div>
+          </div>
+          <div class="rule-item">
+            <span class="rule-item__icon">🐾</span>
+            <div>
+              <h3 data-i18n="rules.pets.title">ペット不可</h3>
+              <p data-i18n="rules.pets.body">ペットの同伴はご遠慮いただいております</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card info-card--emergency">
+          <h3 data-i18n="rules.emergency.title">緊急連絡先</h3>
+          <div class="emergency-list">
+            <a class="emergency-item" href="tel:119">
+              <span class="emergency-item__label" data-i18n="rules.emergency.fire">火事・救急</span>
+              <span class="emergency-item__number">119</span>
+            </a>
+            <a class="emergency-item" href="tel:110">
+              <span class="emergency-item__label" data-i18n="rules.emergency.police">警察</span>
+              <span class="emergency-item__number">110</span>
+            </a>
+            <a class="emergency-item" href="mailto:stay@pastorale.jp">
+              <span class="emergency-item__label" data-i18n="rules.emergency.host">ホスト連絡先</span>
+              <span class="emergency-item__number">stay@pastorale.jp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 近隣ガイド ====== -->
+    <section class="section" id="nearby">
+      <div class="section__header">
+        <h2 data-i18n="nearby.title">近隣ガイド</h2>
+      </div>
+      <div class="content-wrap">
+
+        <h3 class="content-category" data-i18n="nearby.nature.title">🌊 琵琶湖・自然</h3>
+        <div class="nearby-grid">
+          <a class="nearby-card" href="https://maps.google.com/?q=35.3519,136.0258" target="_blank" rel="noopener noreferrer">
+            <img class="nearby-card__img" src="../images/lake-view.jpg" alt="琵琶湖" loading="lazy" decoding="async">
+            <div class="nearby-card__info">
+              <h4 data-i18n="nearby.lake.title">琵琶湖畔</h4>
+              <p data-i18n="nearby.lake.desc">当施設から徒歩約5分。散歩や夕焼け鑑賞に最適です</p>
+              <span class="nearby-card__distance" data-i18n="nearby.lake.distance">🚶 徒歩5分</span>
+            </div>
+          </a>
+          <a class="nearby-card" href="https://maps.google.com/?q=35.4336,135.9381" target="_blank" rel="noopener noreferrer">
+            <img class="nearby-card__img" src="../images/lake-tree.jpg" alt="メタセコイア並木" loading="lazy" decoding="async">
+            <div class="nearby-card__info">
+              <h4 data-i18n="nearby.metasequoia.title">メタセコイア並木</h4>
+              <p data-i18n="nearby.metasequoia.desc">約2.4kmの並木道。四季折々の美しい景色を楽しめます</p>
+              <span class="nearby-card__distance" data-i18n="nearby.metasequoia.distance">🚗 車で約20分</span>
+            </div>
+          </a>
+        </div>
+
+        <h3 class="content-category" data-i18n="nearby.sightseeing.title">⛩️ 観光スポット</h3>
+        <div class="nearby-grid">
+          <a class="nearby-card" href="https://maps.google.com/?q=35.2942,135.9978" target="_blank" rel="noopener noreferrer">
+            <div class="nearby-card__placeholder">⛩️</div>
+            <div class="nearby-card__info">
+              <h4 data-i18n="nearby.shirahige.title">白鬚神社</h4>
+              <p data-i18n="nearby.shirahige.desc">湖中に浮かぶ鳥居が有名な神社。フォトスポットとしても人気</p>
+              <span class="nearby-card__distance" data-i18n="nearby.shirahige.distance">🚗 車で約15分</span>
+            </div>
+          </a>
+          <a class="nearby-card" href="https://maps.google.com/?q=35.3500,136.0300" target="_blank" rel="noopener noreferrer">
+            <div class="nearby-card__placeholder">🌸</div>
+            <div class="nearby-card__info">
+              <h4 data-i18n="nearby.shinasahi.title">新旭花しょうぶ園</h4>
+              <p data-i18n="nearby.shinasahi.desc">6月には約200種20万本の花菖蒲が咲き誇ります</p>
+              <span class="nearby-card__distance" data-i18n="nearby.shinasahi.distance">🚗 車で約5分</span>
+            </div>
+          </a>
+        </div>
+
+        <h3 class="content-category" data-i18n="nearby.shopping.title">🛒 買い出し・食事</h3>
+        <div class="nearby-grid">
+          <a class="nearby-card" href="https://maps.google.com/?q=新旭+スーパー" target="_blank" rel="noopener noreferrer">
+            <div class="nearby-card__placeholder">🛒</div>
+            <div class="nearby-card__info">
+              <h4 data-i18n="nearby.super.title">スーパー（平和堂）</h4>
+              <p data-i18n="nearby.super.desc">食材・飲料の買い出しに便利です</p>
+              <span class="nearby-card__distance" data-i18n="nearby.super.distance">🚗 車で約5分</span>
+            </div>
+          </a>
+          <a class="nearby-card" href="https://maps.google.com/?q=新旭+コンビニ" target="_blank" rel="noopener noreferrer">
+            <div class="nearby-card__placeholder">🏪</div>
+            <div class="nearby-card__info">
+              <h4 data-i18n="nearby.convenience.title">コンビニ</h4>
+              <p data-i18n="nearby.convenience.desc">最寄りのコンビニエンスストア</p>
+              <span class="nearby-card__distance" data-i18n="nearby.convenience.distance">🚗 車で約3分</span>
+            </div>
+          </a>
+        </div>
+
+        <h3 class="content-category" data-i18n="nearby.onsen.title">♨️ 温泉</h3>
+        <div class="nearby-grid">
+          <a class="nearby-card" href="https://maps.google.com/?q=高島市+日帰り温泉" target="_blank" rel="noopener noreferrer">
+            <div class="nearby-card__placeholder">♨️</div>
+            <div class="nearby-card__info">
+              <h4 data-i18n="nearby.onsen.name">くつき温泉 てんくう</h4>
+              <p data-i18n="nearby.onsen.desc">自然に囲まれた日帰り温泉施設</p>
+              <span class="nearby-card__distance" data-i18n="nearby.onsen.distance">🚗 車で約25分</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== 交通アクセス ====== -->
+    <section class="section" id="access">
+      <div class="section__header">
+        <h2 data-i18n="access.title">交通アクセス</h2>
+      </div>
+      <div class="content-wrap">
+
+        <div class="info-card">
+          <h3 data-i18n="access.address.title">所在地</h3>
+          <p class="access-address">〒520-1503<br>滋賀県高島市新旭町深溝471-22</p>
+          <a class="btn btn--outline" href="https://maps.google.com/?q=35.3519,136.0258" target="_blank" rel="noopener noreferrer" data-i18n="access.map.open">Google Mapsで開く →</a>
+        </div>
+
+        <div class="info-card">
+          <h3 data-i18n="access.car.title">🚗 お車でお越しの場合</h3>
+          <ul data-i18n="access.car.list">
+            <li>大阪から：名神高速 → 京都東IC → 湖西道路 → 約90分</li>
+            <li>京都から：湖西道路経由 → 約60分</li>
+            <li>駐車場：敷地内に2台分あり（無料）</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3 data-i18n="access.train.title">🚃 電車でお越しの場合</h3>
+          <ul data-i18n="access.train.list">
+            <li>JR湖西線「新旭駅」下車</li>
+            <li>駅からタクシーで約10分</li>
+            <li>大阪駅から新旭駅まで約90分（JR新快速→近江今津乗換）</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3 data-i18n="access.taxi.title">🚕 タクシー</h3>
+          <div class="emergency-list">
+            <a class="emergency-item" href="tel:0740-22-0106">
+              <span class="emergency-item__label" data-i18n="access.taxi.company1">高島タクシー</span>
+              <span class="emergency-item__number">0740-22-0106</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d136.0258!3d35.3519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDIxJzA3LjAiTiAxMzbCsDAxJzMyLjkiRQ!5e0!3m2!1sja!2sjp!4v1"
+            width="100%" height="350" style="border:0; border-radius: var(--radius);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
