@@ -168,7 +168,6 @@ li { margin-bottom: 0.4em; }
   background-position: center;
   display: flex;
   align-items: flex-end;
-  padding-top: env(safe-area-inset-top, 0px);
 }
 
 .home-hero__overlay {
