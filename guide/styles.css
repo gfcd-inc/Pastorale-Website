@@ -165,7 +165,7 @@ li { margin-bottom: 0.4em; }
   min-height: 160px;
   flex: 0 0 auto;
   background-size: cover;
-  background-position: center 40%;
+  background-position: center;
   display: flex;
   align-items: flex-end;
 }
@@ -173,7 +173,7 @@ li { margin-bottom: 0.4em; }
 .home-hero__overlay {
   width: 100%;
   padding: 32px 20px 20px;
-  background: linear-gradient(transparent 30%, rgba(36, 49, 28, 0.45));
+  background: linear-gradient(transparent, rgba(36, 49, 28, 0.85));
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -201,9 +201,52 @@ li { margin-bottom: 0.4em; }
 /* Language switch */
 .lang-switch {
   display: flex;
+  align-items: center;
   gap: 8px;
   margin-top: 8px;
 }
+
+.font-size-switch {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.font-size-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 100px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: background 0.2s, border-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.font-size-btn[data-size="small"] { font-size: 0.65rem; }
+.font-size-btn[data-size="medium"] { font-size: 0.85rem; }
+.font-size-btn[data-size="large"] { font-size: 1.1rem; }
+
+.font-size-btn.active {
+  background: rgba(255,255,255,0.92);
+  color: var(--brand-800);
+  border-color: transparent;
+}
+
+.font-size-btn:hover:not(.active) {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Font size classes on body */
+body.font-small  { font-size: 14px; }
+body.font-medium { font-size: 16px; }
+body.font-large  { font-size: 18px; }
 
 .lang-btn {
   padding: 7px 14px;

@@ -101,6 +101,24 @@
     });
   });
 
+  // ─── Font Size Switching ───
+  const fontSizeButtons = document.querySelectorAll('.font-size-btn');
+
+  function setFontSize(size) {
+    document.body.classList.remove('font-small', 'font-medium', 'font-large');
+    document.body.classList.add(`font-${size}`);
+    fontSizeButtons.forEach((btn) => {
+      btn.classList.toggle('active', btn.dataset.size === size);
+    });
+    localStorage.setItem('fontSize', size);
+  }
+
+  fontSizeButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      setFontSize(btn.dataset.size);
+    });
+  });
+
   // ─── Copy to Clipboard ───
   copyButtons.forEach((btn) => {
     btn.addEventListener('click', async () => {
@@ -148,6 +166,7 @@
     const initialLang = supportedLangs.includes(browserLang) ? browserLang : 'ja';
 
     loadLanguage(initialLang);
+    setFontSize(localStorage.getItem('fontSize') || 'medium');
     registerSW();
   }
 
