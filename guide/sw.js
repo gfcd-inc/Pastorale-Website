@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pastorale-guide-v12';
+const CACHE_NAME = 'pastorale-guide-v13';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -44,35 +44,18 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Fetch: Cache First for assets, Network First for JSON data
+// Fetch: Network First for all requests (fall back to cache if offline)
 self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
-
-  // Network First for content JSON (so updates propagate quickly)
-  if (url.pathname.endsWith('.json') && url.pathname.includes('/data/')) {
-    event.respondWith(
-      fetch(event.request)
-        .then((response) => {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-          return response;
-        })
-        .catch(() => caches.match(event.request))
-    );
-    return;
-  }
-
-  // Cache First for everything else
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      return cached || fetch(event.request).then((response) => {
-        // Cache successful GET requests
+    fetch(event.request)
+      .then((response) => {
         if (event.request.method === 'GET' && response.status === 200) {
           const clone = response.clone();
           caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
         }
         return response;
-      });
-    })
+      })
+      .catch(() => caches.match(event.request))
   );
+});
 });
