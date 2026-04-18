@@ -155,7 +155,7 @@ li { margin-bottom: 0.4em; }
 /* ─── Home Hero ─── */
 .home-hero {
   position: relative;
-  height: 220px;
+  height: 190px;
   background-size: cover;
   background-position: center;
   display: flex;
