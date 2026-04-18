@@ -105,8 +105,8 @@
   const fontSizeButtons = document.querySelectorAll('.font-size-btn');
 
   function setFontSize(size) {
-    document.body.classList.remove('font-small', 'font-medium', 'font-large');
-    document.body.classList.add(`font-${size}`);
+    document.documentElement.classList.remove('font-small', 'font-medium', 'font-large');
+    document.documentElement.classList.add(`font-${size}`);
     fontSizeButtons.forEach((btn) => {
       btn.classList.toggle('active', btn.dataset.size === size);
     });

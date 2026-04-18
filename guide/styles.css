@@ -243,10 +243,10 @@ li { margin-bottom: 0.4em; }
   background: rgba(255,255,255,0.25);
 }
 
-/* Font size classes on body */
-body.font-small  { font-size: 14px; }
-body.font-medium { font-size: 16px; }
-body.font-large  { font-size: 18px; }
+/* Font size classes on html (rem is relative to html) */
+html.font-small  { font-size: 14px; }
+html.font-medium { font-size: 16px; }
+html.font-large  { font-size: 18px; }
 
 .lang-btn {
   padding: 7px 14px;
