@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pastorale-guide-v1';
+const CACHE_NAME = 'pastorale-guide-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
