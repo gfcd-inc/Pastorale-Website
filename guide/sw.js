@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pastorale-guide-v8';
+const CACHE_NAME = 'pastorale-guide-v12';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -18,6 +18,7 @@ const ASSETS_TO_CACHE = [
   '../images/lake-tree.jpg',
   '../images/Pastorale_5GHz.png',
   '../images/Pastorale_2.4GHz.png',
+  '../images/hero-guide.jpg',
   '../images/%E3%83%AD%E3%82%B4%20(1).png'
 ];
 
