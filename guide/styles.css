@@ -139,6 +139,13 @@ li { margin-bottom: 0.4em; }
   padding-bottom: 40px;
 }
 
+#home {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+
 .section.active {
   opacity: 1;
   pointer-events: auto;
@@ -156,7 +163,8 @@ li { margin-bottom: 0.4em; }
 /* ─── Home Hero ─── */
 .home-hero {
   position: relative;
-  height: 190px;
+  min-height: 140px;
+  flex-shrink: 0;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -228,8 +236,10 @@ li { margin-bottom: 0.4em; }
 .home-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
   gap: 10px;
   padding: 16px 20px;
+  flex: 1;
 }
 
 .home-card {
@@ -244,7 +254,7 @@ li { margin-bottom: 0.4em; }
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
   transition: box-shadow 0.2s, transform 0.15s;
-  min-height: 100px;
+  min-height: 0;
   text-decoration: none;
   color: inherit;
 }
