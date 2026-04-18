@@ -165,7 +165,7 @@ li { margin-bottom: 0.4em; }
   min-height: 160px;
   flex: 0 0 auto;
   background-size: cover;
-  background-position: center bottom;
+  background-position: center 40%;
   display: flex;
   align-items: flex-end;
 }
@@ -173,7 +173,7 @@ li { margin-bottom: 0.4em; }
 .home-hero__overlay {
   width: 100%;
   padding: 32px 20px 20px;
-  background: linear-gradient(transparent 20%, rgba(36, 49, 28, 0.55));
+  background: linear-gradient(transparent 30%, rgba(36, 49, 28, 0.45));
   display: flex;
   flex-direction: column;
   gap: 6px;
